@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Essenza</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root{
+            --plum:        #2f2129;  /* deep aubergine, footer/info card */
+            --plum-deep:   #1c1317;
+            --gold:        #b79c7b;  /* muted gold accent */
+            --gold-deep:   #a3824f;
+            --oxblood:     #7c2f34;  /* CTA */
+            --ivory:       #f8f3ee;  /* page background */
+            --card:        #ffffff; /* card surface */
+            --ink:         #4b3a32; /* headings */
+            --body-text:   #6b5d53;
+        }
+
+        /* ---- ONE simple background image for the whole page ---- */
+        body{
+            font-family:'Jost', sans-serif;
+            color: var(--body-text);
+            background-image: url("pngtree-perfume-bottle-on-rose-petals-image_16600073.jpg");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+        }
+        h1,h2,h3,h4,h5{ font-family:'Cormorant Garamond', serif; }
+
+        .contact-hero{
+            background: linear-gradient(rgba(28,19,23,.55), rgba(28,19,23,.75));
+            min-height: 42vh;
+            display:flex;
+            align-items:center;
+            color:#fff;
+            padding-top:48px;
+        }
+        .contact-hero .breadcrumb-link{
+            color: var(--gold);
+            text-decoration:none;
+            font-size:.85rem;
+            letter-spacing:.5px;
+            display:inline-block;
+            margin-bottom:10px;
+            padding-right:15px;
+        }
+        .contact-hero h1{ font-size: clamp(2.2rem, 5vw, 3.4rem); font-weight:600; font-style:italic; }
+        .contact-hero p{ color:#ece4da; max-width:520px; font-family:'Jost',sans-serif; font-weight:300; }
+
+        .contact-section{
+            background: rgba(248,243,238,.93);
+            padding:70px 0;
+        }
+        .contact-card{
+            background: var(--card);
+            border-radius:18px;
+            padding:36px;
+            box-shadow:0 10px 30px rgba(75,58,50,.10);
+            border: 1px solid rgba(75,58,50,.06);
+        }
+        .contact-card label{ font-weight:600; color: var(--ink); font-size:.9rem; margin-bottom:6px; }
+        .contact-card .form-control, .contact-card .form-select{
+            border-radius:10px;
+            border:1px solid #e6ddd0;
+            padding:10px 14px;
+            background:#fff;
+        }
+        .contact-card .form-control:focus, .contact-card .form-select:focus{
+            border-color: var(--gold);
+            box-shadow:0 0 0 .2rem rgba(183,156,123,.25);
+        }
+        .btn-send{
+            background: var(--oxblood);
+            color:#fff;
+            border:none;
+            padding:12px 30px;
+            font-weight:500;
+        }
+        .btn-send:hover{ background:#622226; color:#fff; }
+
+        .contact-info-card{
+            background: linear-gradient(160deg, var(--plum) 0%, var(--plum-deep) 100%);
+            color:#fff;
+            border-radius:18px;
+            padding:36px;
+            height:100%;
+        }
+        .contact-info-card h5{ color: var(--gold); font-weight:700; margin-bottom:20px; font-style:italic; }
+        .contact-info-card .info-row{ display:flex; gap:14px; margin-bottom:22px; }
+        .contact-info-card .info-row i{ font-size:1.3rem; color: var(--gold); margin-top:3px; }
+        .contact-info-card .info-row a, .contact-info-card .info-row p{ color:#eee; text-decoration:none; margin-bottom:0; font-size:.95rem; }
+        .contact-info-card .info-row a:hover{ color: var(--gold); }
+        .btn-whatsapp{ background:#25D366; color:#fff; border:none; }
+        .btn-whatsapp:hover{ background:#1ebd59; color:#fff; }
+
+        .footer{
+            background: linear-gradient(180deg, rgba(28,19,23,.85) 0%, rgba(20,13,16,.97) 100%);
+            color: #f3f3f3;
+            padding-top: 60px;
+        }
+        .footer h5{ color:#fff; font-weight:700; margin-bottom:20px; font-style:italic; }
+        .footer h5::after{ content:""; display:block; width:40px; height:2px; background: var(--gold); margin-top:8px; }
+        .footer p, .footer a{ color:#d8d0c6; text-decoration:none; font-size:.95rem; }
+        .footer ul{ list-style:none; padding-left:0; }
+        .footer ul li{ margin-bottom:10px; }
+        .footer ul li a:hover{ color: var(--gold); }
+        .footer-bottom{ border-top:1px solid rgba(255,255,255,.1); margin-top:30px; padding:20px 0; font-size:.85rem; text-align:center; color:#a89e93; }
+    </style>
+</head>
+<body>
+
+<!-- ============ HERO ============ -->
+<section class="contact-hero">
+
+  <div class="container">
+     <a href="homepage.html" class="breadcrumb-link"><i class="bi bi-arrow-left"></i> Back to Home</a>
+    <span class="hero-subtitle" style="font-size:11px;letter-spacing:1px;border:1px solid #fff;border-radius:10px;padding:4px 10px;">GET IN TOUCH</span>
+    <h1 class="mt-3">Let's Find Your Signature Scent</h1>
+    <p>Questions about a fragrance, a custom blend, or an order? Write to us and we'll reply within a day.</p>
+  </div>
+</section>
+
+<!-- ============ FORM + INFO ============ -->
+<section class="contact-section">
+  <div class="container">
+    <div class="row g-4">
+
+      <!-- Formspree Contact Form -->
+      <div class="col-lg-7">
+        <div class="contact-card">
+          <h4 class="mb-4" style="color:var(--ink);font-weight:600;">Send Us a Message</h4>
+
+          <!--
+            IMPORTANT: Replace YOUR_FORM_ID below with the ID Formspree gives you
+            e.g. https://formspree.io/f/xyzabc123
+          -->
+          <form action="https://formspree.io/f/mzdnzwkz" method="POST">
+
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label for="name">Full Name</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Your name" required>
+              </div>
+              <div class="col-md-6">
+                <label for="phone">Phone Number</label>
+                <input type="tel" class="form-control" id="phone" name="phone" placeholder="+91 XXXXX XXXXX" required>
+              </div>
+              <div class="col-md-6">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="you@example.com" required>
+              </div>
+              <div class="col-md-6">
+                <label for="interest">I'm Interested In</label>
+                <select class="form-select" id="interest" name="interest">
+                  <option>Rose Veil Eau de Parfum</option>
+                  <option>Amber Nights Eau de Parfum</option>
+                  <option>A Custom Fragrance Blend</option>
+                  <option>Gifting &amp; Wholesale</option>
+                  <option>Order &amp; Shipping Support</option>
+                  <option>Something else</option>
+                </select>
+              </div>
+              <div class="col-12">
+                <label for="message">Message</label>
+                <textarea class="form-control" id="message" name="message" rows="4" placeholder="Tell us about the scent profile you love, or what you're looking for..." required></textarea>
+              </div>
+
+              <!-- Honeypot field to reduce spam (leave hidden, no JS needed) -->
+              <input type="text" name="_gotcha" style="display:none">
+
+              <!-- Custom email subject line shown in your inbox -->
+              <input type="hidden" name="_subject" value="New enquiry from Essenza website">
+
+              <div class="col-12">
+                <button type="submit" class="btn btn-send rounded-pill">
+                  <i class="bi bi-send-fill"></i> Send Message
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Direct Contact Info -->
+      <div class="col-lg-5">
+        <div class="contact-info-card">
+          <h5>Contact Details</h5>
+
+          <div class="info-row">
+            <i class="bi bi-whatsapp"></i>
+            <div>
+              <p style="color:var(--gold);font-size:.78rem;letter-spacing:.5px;margin-bottom:2px;">WHATSAPP</p>
+              <a href="https://wa.me/918606531540?text=Hi%2C%20I%27d%20like%20to%20ask%20about%20a%20fragrance">+91 86065 31540</a>
+            </div>
+          </div>
+
+          <div class="info-row">
+            <i class="bi bi-envelope-fill"></i>
+            <div>
+              <p style="color:var(--gold);font-size:.78rem;letter-spacing:.5px;margin-bottom:2px;">EMAIL</p>
+              <a href="mailto:hello@essenza.com">hello@essenza.com</a>
+            </div>
+          </div>
+
+          <div class="info-row">
+            <i class="bi bi-geo-alt-fill"></i>
+            <div>
+              <p style="color:var(--gold);font-size:.78rem;letter-spacing:.5px;margin-bottom:2px;">BOUTIQUE</p>
+              <p>Kochi, Kerala, India</p>
+            </div>
+          </div>
+
+          <div class="info-row">
+            <i class="bi bi-clock-fill"></i>
+            <div>
+              <p style="color:var(--gold);font-size:.78rem;letter-spacing:.5px;margin-bottom:2px;">RESPONSE TIME</p>
+              <p>Usually within 24 hours</p>
+            </div>
+          </div>
+
+          <a href="https://wa.me/918606531540?text=Hi%2C%20I%27d%20like%20to%20ask%20about%20a%20fragrance" class="btn btn-whatsapp rounded-pill w-100 mt-3 py-2">
+            <i class="bi bi-whatsapp"></i> Chat Instantly on WhatsApp
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container">
+    <div class="row gy-4">
+      <div class="col-lg-4 col-md-6">
+        <h5 class="fs-4 mb-3">Essenza</h5>
+        <p>Small-batch fragrances crafted from rare naturals, bottled in recyclable glass, and finished by hand.</p>
+      </div>
+      <div class="col-lg-2 col-md-6">
+        <h5>Explore</h5>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="collection.html">Collection</a></li>
+          <li><a href="journal.html">The Journal</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <h5>Popular Scents</h5>
+        <ul>
+          <li><a href="#">Rose Veil</a></li>
+          <li><a href="#">Amber Nights</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="https://wa.me/918606531540"><i class="bi bi-whatsapp"></i> +91 86065 31540</a></li>
+          <li><a href="mailto:hello@essenza.com"><i class="bi bi-envelope"></i> hello@essenza.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">&copy; 2026 Essenza. All rights reserved.</div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>
